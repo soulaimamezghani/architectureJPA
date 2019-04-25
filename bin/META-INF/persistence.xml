@@ -1,0 +1,29 @@
+
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+             http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"  
+             version="2.0">
+    <persistence-unit name="demojpa-pu"> <!-- permet de creer des canales-->
+        <properties>
+            <property name="hibernate.archive.autodetection" value="class" />
+            <property name="hibernate.show_sql" value="true" /> 
+            <property name="hibernate.format_sql" value="true" />
+ 
+            <!-- Configuration de la  BDD -->
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/architecture" />
+            <property name="javax.persistence.jdbc.user" value="postgres" /><!--postgres nom utilisateur -->
+            <property name="javax.persistence.jdbc.password" value="21031990" />
+ 
+            <!-- Spécifie le 'dialecte' SQL utilisé pour communiquer avec la BDD -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" /><!-- version jpa -->
+ 
+            <!-- Indique a Hibernate de (re-)créer la BDD au lancement de l'application -->
+          <!--    <property name="hibernate.hbm2ddl.auto" value="create" />  -->
+         <!-- creer les tables en BDD -->
+     <!-- avant de faire de requettes et si la BDD est cree (les tables sont ts crees)il faut effacer la ligne 22  -->
+      <!-- value =update si je veux rajouter une table sans modifier les tables precedentes -->  </properties>
+ 
+    </persistence-unit>
+</persistence>
